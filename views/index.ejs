@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Weather App</title>
+    <style>
+        #desc,#max,#min{
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body
+    style="background-image: url(https://cdn.pixabay.com/photo/2018/09/19/23/03/sunset-3689760_1280.jpg);background-size: cover; background-repeat: no-repeat;">
+    <div class="container-fluid">
+        <div class="row">
+                <div class="col-8 p-5">
+                    <h3 class="text-light">Weather App</h3>
+                    <h1 class="text-light mt-5"><%= temp %>°C</h1>
+                </div>
+            <div class="col-4 p-5">
+                <form action="/" class="d-flex align-items-center" method="POST">
+                    <input type="text" placeholder="Enter your city" name="city">
+                    <button type="submit" class="btn btn-danger btn-sm ml-2">Get</button>
+                </form>
+                <% if(weather !== null){ %>
+                    <div class="container text-light mt-5">
+                        <h2>Weather Details</h2>
+                        <p>Description : <span id="desc"><%= description %></span></p>
+                        <p>Maximum Temperature : <span id="max"><%= max %>°C</span></p>
+                        <p>Minimum Temperature : <span id="min"><%= min %>°C</span></p>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
